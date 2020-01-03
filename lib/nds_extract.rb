@@ -5,7 +5,11 @@ require 'directors_database'
 # using director_data as input
 
 def gross_for_director(director_data)
-  p director_data
+  gross = 0
+  for i in director_data[:movies] do
+    gross += director_data[:movies][i][:worldwide_gross]
+  end
+  return gross
 end
 
 # Write a method that, given an NDS creates a new Hash
